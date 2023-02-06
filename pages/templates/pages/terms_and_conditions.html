@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}T &amp; C{% endblock head_title %}
+
+{% block content %}
+
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('{% static 'assets/img/page-header.jpg' %}');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>Terms &amp; Conditions </h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Terms &amp; Conditions</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    <section id="pricing" class="pricing">
+      <div class="container">
+
+        <div class="row gy-4">
+          <h2>Terms &amp; Conditions</h2>
+          
+        </div>
+
+      </div>
+    </section>
+    
+{% endblock content %}

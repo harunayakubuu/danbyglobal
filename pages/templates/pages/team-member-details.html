@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head_title %}{% if member.user.get_full_name %}{{ member.user.get_full_name }} {% else %} {{ member.user.username | upper }}{% endif %}{% endblock head_title %}
+{% block content %}
+
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('{% static 'assets/img/page-header.jpg' %}');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>{% if member.user.get_full_name %}{{ member.user.get_full_name }} {% else %} {{ member.user.username | upper }}{% endif %}</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'pages:index' %}">Home</a></li>
+            <li>{% if member.user.get_full_name %}{{ member.user.get_full_name }} {% else %} {{ member.user.username | upper }}{% endif %}</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    <section id="service-details" class="service-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="services-list">
+              <img src="{% static 'assets/img/service-details.jpg' %}" alt="" class="img-fluid">
+            </div>
+
+            <h4>{% if member.user.get_full_name %}{{ member.user.get_full_name }} {% else %} {{ member.user.username | upper }}{% endif %}</h4>
+            <span>
+                {% if member.designation == 'DFL' %}
+                  Director Finance &amp; Logistics 
+                {% elif member.designation == 'DAW' %}
+                  Director Admin &amp; Warehouse
+                {% elif member.designation == 'OMM' %}
+                  Operational &amp; Marketing Manager
+                {% endif %}
+              </span>
+            <p>{{ member.words }}</p>
+          </div>
+
+          <div class="col-lg-8">
+            <h3>Heading</h3>
+            <p>
+              {{ member.about | linebreaks }}
+            </p>
+          </div>
+
+      </div>
+    </section>
+{% endblock content %}

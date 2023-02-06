@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head_title %}Privacy Policy{% endblock head_title %}
+
+{% block content %}
+
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('{% static 'assets/img/page-header.jpg' %}');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>Privacy Policy</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'pages:index' %}">Home</a></li>
+            <li>Privacy Policy</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    <section id="pricing" class="pricing">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+
+          <h2>Privacy Policy</h2>
+        </div>
+
+      </div>
+    </section>
+    
+  </main>
+{% endblock content %}

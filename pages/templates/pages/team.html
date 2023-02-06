@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head_title %}Our Team{% endblock head_title %}
+{% block content %}
+
+<div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('{% static 'assets/img/page-header.jpg' %}');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>Our Team</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'pages:index' %}">Home</a></li>
+            <li>About us</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+    <section id="team" class="team pt-0">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <span>Our Team</span>
+          <h2>Our Team</h2>
+
+        </div>
+
+        <div class="row" data-aos="" data-aos-delay="100">
+          {% for member in team %}
+                <div class="col-lg-4 col-md-6 d-flex">
+                  <div class="member">
+                    <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt="">
+                    <div class="member-content">
+                      <h4><a href="{% url 'pages:team_member_details' member.id %}">{{ member.user.username }}</a></h4>
+                      <span>
+                        {% if member.designation == 'DFL' %}
+                          Director Finance &amp; Logistics 
+                        {% elif member.designation == 'DAW' %}
+                          Director Admin &amp; Warehouse
+                        {% elif member.designation == 'OMM' %}
+                          Operational &amp; Marketing Manager
+                        {% endif %}
+                      </span>
+                      <p>
+                        {{ member.words }}
+                      </p>
+                      <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            {% endfor %}
+        </div>
+
+      </div>
+    </section>
+
+{% endblock content %}

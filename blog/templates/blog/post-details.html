@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}{{ post.title }} {% endblock head_title %}
+
+{% block content %}
+  
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('{% static 'assets/img/page-header.jpg' %}');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>{{ post.title }}</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'pages:index' %}">Home</a></li>
+            <li>{{ post.title }}</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="row gy-4 features-item">
+          <div class="col-md-5">
+            <img src="{% static 'assets/img/features-3.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.content | linebreaks }}.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>   
+    
+  {% endblock content %}

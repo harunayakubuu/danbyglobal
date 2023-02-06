@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_title %}Blog {% endblock head_title %}
+
+{% block content %}
+
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('{% static 'assets/img/page-header.jpg' %}');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>Blog</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'pages:index' %}">Home</a></li>
+            <li>Blog</li>
+          </ol>
+        </div>
+      </nav>
+    </div>
+
+
+    <section id="service" class="services pt-0">
+      <div class="container">
+
+        <div class="section-header">
+          <span>Blog</span>
+          <h2>Blog</h2>
+
+        </div>
+
+        <div class="row gy-4">
+
+          {% for post in posts %}
+          <div class="col-lg-4 col-md-6" data-aos-delay="100">
+            <div class="card">
+              <div class="card-img">
+                <img src="{{ post.image.url }}" alt="" class="img-fluid">
+              </div>
+              <h3><a href="{{ post.get_absolute_url }}" class="stretched-link">{{ post.title }}</a></h3>
+              <p>{{ post.content | truncatewords:10 }}</p>
+              
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section>
+{% endblock content %}
