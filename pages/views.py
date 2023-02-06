@@ -71,7 +71,7 @@ def services(request):
     context = {
         'services':services
     }
-    return render(request, 'services/services.html', context)
+    return render(request, 'pages/services.html', context)
 
 
 def service_details(request, slug):
@@ -79,4 +79,4 @@ def service_details(request, slug):
     context = {
         'service':service
     }
-    return render(request, 'services/service-details.html', context)
+    return render(request, 'pages/service-details.html', context)
