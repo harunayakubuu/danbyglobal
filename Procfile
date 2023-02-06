@@ -1,1 +1,1 @@
-web: gunicorn danbyglobal.wsgi
+web: gunicorn danbyglobal.wsgi --log-file -
