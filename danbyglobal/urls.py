@@ -9,7 +9,7 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls', namespace="pages")),
-    path('danby/danby-administration/', admin.site.urls),
+    path('danby-global/administration/', admin.site.urls),
     path('accounts/', include('accounts.urls', namespace="accounts")),
     path('blog/', include('blog.urls', namespace="blog")),
     path('contacts/', include('contacts.urls', namespace="contacts")),
