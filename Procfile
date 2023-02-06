@@ -1,1 +1,1 @@
-web: gunicorn danby.wsgi
+web: gunicorn danbyglobal.wsgi
