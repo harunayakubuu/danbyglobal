@@ -9,7 +9,7 @@ class Account(AbstractUser):
     first_name = models.CharField(max_length=150)
     middle_name = models.CharField(max_length=150, null=True, blank=True)
     last_name = models.CharField(max_length=150)
-    email = models.EmailField(unique=True, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
     phone_number = PhoneNumberField(unique=True, null=True, blank=True)
 
     # USER_ROLES = (
