@@ -29,26 +29,25 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-4">
+          <div class="col-lg-5">
             <div class="services-list">
-              <img src="{% static 'assets/img/service-details.jpg' %}" alt="" class="img-fluid">
+              <img src="{% if member.display_picture.url %} {{ member.display_picture.url }} {% endif %}" alt="" class="img-fluid">
             </div>
-
-            <h4>{% if member.user.get_full_name %}{{ member.user.get_full_name }} {% else %} {{ member.user.username | upper }}{% endif %}</h4>
-            <span>
-                {% if member.designation == 'DFL' %}
-                  Director Finance &amp; Logistics 
-                {% elif member.designation == 'DAW' %}
-                  Director Admin &amp; Warehouse
-                {% elif member.designation == 'OMM' %}
-                  Operational &amp; Marketing Manager
-                {% endif %}
-              </span>
-            <p>{{ member.words }}</p>
           </div>
 
-          <div class="col-lg-8">
-            <h3>Heading</h3>
+          <div class="col-lg-7">
+            <h3>{% if member.user.get_full_name %}{{ member.user.get_full_name | title }} {% else %} {{ member.user.username | upper }}{% endif %}</h3>
+            <span>
+                {% if member.designation == 'DFL' %}
+                  <strong>Director Finance &amp; Logistics</strong> 
+                {% elif member.designation == 'DAW' %}
+                  <strong>Director Admin &amp; Warehouse</strong>
+                {% elif member.designation == 'OMM' %}
+                  <strong>Operational &amp; Marketing Manager</strong>
+                {% endif %}
+              </span>
+            <p><em>{{ member.words }}</em></p>
+            <hr />
             <p>
               {{ member.about | linebreaks }}
             </p>

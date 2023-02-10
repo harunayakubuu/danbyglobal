@@ -37,9 +37,9 @@
           {% for member in team %}
                 <div class="col-lg-4 col-md-6 d-flex">
                   <div class="member">
-                    <img src="{% static 'assets/img/team/team-1.jpg' %}" class="img-fluid" alt="">
+                    <img src="{% if member.display_picture.url %} {{ member.display_picture.url }} {% endif %}" class="img-fluid" alt="">
                     <div class="member-content">
-                      <h4><a href="{% url 'pages:team_member_details' member.id %}">{{ member.user.username }}</a></h4>
+                      <h4><a href="{% url 'pages:team_member_details' member.id %}">{{ member.user.get_full_name }}</a></h4>
                       <span>
                         {% if member.designation == 'DFL' %}
                           Director Finance &amp; Logistics 

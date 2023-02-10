@@ -74,8 +74,8 @@ def services(request):
     return render(request, 'pages/services.html', context)
 
 
-def service_details(request, slug):
-    service = get_object_or_404(Service, slug = slug)
+def service_details(request, id):
+    service = get_object_or_404(Service, id = id)
     context = {
         'service':service
     }

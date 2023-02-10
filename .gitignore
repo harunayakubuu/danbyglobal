@@ -18,3 +18,4 @@ env.bak/
 venv.bak/
 # *.txt
 postgresql_config.txt
+notes

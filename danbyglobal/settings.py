@@ -102,7 +102,6 @@ AUTH_USER_MODEL = 'accounts.Account'
 # }
 
 
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -173,8 +172,8 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
-
 #Media Files Config
+
 if DEBUG:
     #AWS Config
     AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
@@ -184,7 +183,6 @@ if DEBUG:
     AWS_S3_FILE_OVERWRITE = config('AWS_S3_FILE_OVERWRITE')
     AWS_DEFAULT_ACL = None
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    
 else:
     MEDIA_URL = '/media/'
     MEDIA_ROOT = BASE_DIR / 'media'
