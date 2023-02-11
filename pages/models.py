@@ -41,7 +41,7 @@ class TermsAndCondition(models.Model):
 
 class Service(models.Model):
     title = models.CharField(max_length = 255, unique = True)
-    picture = models.ImageField(upload_to = "pictures/services")
+    # picture = models.ImageField(upload_to = "pictures/services")
     description = models.TextField()
     active = models.BooleanField("Active", default = True)
     slug = models.SlugField(max_length = 100, unique = True)

@@ -189,7 +189,7 @@
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card">
               <div class="card-img">
-                <img src="{{ service.picture.url }}" alt="" class="img-fluid">
+                <!--<img src="{# service.picture.url #}" alt="" class="img-fluid">-->
               </div>
               <h3><a href="{% url 'pages:service_details' service.id %}" class="stretched-link">{{ s.title }}</a></h3>
               <p>{{ service.description | truncatewords:5 }}</p>
