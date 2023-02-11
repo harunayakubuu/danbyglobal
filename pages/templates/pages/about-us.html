@@ -169,7 +169,7 @@
           {% for member in team %}
                 <div class="col-lg-4 col-md-6 d-flex">
                   <div class="member">
-                    <img src="{% if member.display_picture.url %} {{ member.display_picture.url }} {% endif %}" class="img-fluid" alt="">
+                    <img src="{% if member.designation == 'DAW' %}{% static 'assets/img/team/daw.jpg' %}{% elif member.designation == 'OMM' %}{% static 'assets/img/team/omm.jpg' %} {% elif member.designation == 'DFL' %}{% static 'assets/img/team/dfl.jpg' %}{% endif %}" class="img-fluid" alt="">
                     <div class="member-content">
                       <h4><a href="{% url 'pages:team_member_details' member.id %}">{{ member.user.get_full_name }}</a></h4>
                       <span>
