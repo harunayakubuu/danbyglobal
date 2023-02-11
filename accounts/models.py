@@ -62,7 +62,7 @@ class Team(models.Model):
     )
     designation = models.CharField(max_length = 20, choices = DESIGNATION_CHOICES)
     words = models.CharField(max_length = 100)
-    about = models.TextField(max_length = 100)
+    about = models.TextField()
     display_picture = models.ImageField(upload_to = 'pictures/team/')
     created_date = models.DateTimeField(auto_now_add = True)
     updated_date = models.DateTimeField(auto_now = True)
